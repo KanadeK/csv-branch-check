@@ -1,0 +1,27 @@
+{
+  "version": 1,
+  "rules": [
+    {
+      "id": "active-needs-contact",
+      "when": {"column": "status", "equals": "active"},
+      "check": {"any": [
+        {"column": "email", "not_empty": true},
+        {"column": "phone", "not_empty": true}
+      ]}
+    },
+    {
+      "id": "us-country-label",
+      "when": {"column": "country", "equals": "US"},
+      "check": {"column": "country_name", "equals": "United States"}
+    },
+    {
+      "id": "allowed-tags",
+      "check": {"column": "tags", "each_in": ["red", "blue", "green"], "separator": ";"}
+    },
+    {
+      "id": "contact-preferred",
+      "severity": "warning",
+      "check": {"column": "email", "not_empty": true}
+    }
+  ]
+}

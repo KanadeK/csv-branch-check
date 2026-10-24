@@ -1,0 +1,3 @@
+id,status,email,phone,country,country_name,tags
+001,active,contact@example.invalid,,US,United States,red;blue
+002,inactive,,,CN,China,green
